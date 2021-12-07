@@ -204,7 +204,7 @@ const Signin = () => {
 
   const showError = () => (
     <div
-      classNameNameName="alert alert-danger"
+      className="alert alert-danger"
       style={{ display: error ? "" : "none" }}
     >
       {error}
@@ -213,7 +213,7 @@ const Signin = () => {
 
   const showLoading = () =>
     loading && (
-      <div classNameNameName="alert alert-info">
+      <div className="alert alert-info">
         <h1>Loading...</h1>
       </div>
     );
