@@ -1,0 +1,32 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.carousel {
+  margin-top: 20px;
+  margin-left: 300px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  max-width: 1250px;
+  height: 730px;
+}
+
+.search-bar {
+  margin-left: 950px;
+  padding-left: 10px;
+  width: 300px !important;
+
+  font-size: 0.5em;
+  background-color: white;
+  border-radius: 1rem;
+  border: 1px solid rgb(25, 240, 157);
+  height: 3em;
+  font-size: 0.8em;
+}
+.navber-default {
+  background-color: #5cc795;
+}
+.first-level {
+  margin-bottom: 1px;
+}
