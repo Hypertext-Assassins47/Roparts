@@ -7,7 +7,7 @@ const expressValidator = require('express-validator')
 const app = express(); //declaring my app here 
 const dotenv = require('dotenv'); // as we need to use our port 
 dotenv.config();
-const userRoutes = require('./routes/user');
+const authRoutes = require('./routes/auth');
 
 //middleware 
 app.use(morgan('dev'));
@@ -17,7 +17,7 @@ app.use(expressValidator());
 
 
 //routes middleware
-app.use('/api', userRoutes)
+app.use('/api', authRoutes)
 
 mongoose.connect(process.env.DATABASE)
     .then(() => {
