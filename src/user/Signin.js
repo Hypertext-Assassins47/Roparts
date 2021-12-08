@@ -228,7 +228,8 @@ const Signin = () => {
       }
     }
     if (isAuthenticated()) {
-    return  <Redirect to="/" />;
+      return <Redirect to="/" />;
+    }
   };
 
   return (
