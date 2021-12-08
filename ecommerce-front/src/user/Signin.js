@@ -181,7 +181,7 @@ const Signin = () => {
                   fontWeight: "bold",
                   color: "#3BA0AF",
                 }}
-                //  style="margin-left: 2em; text-decoration: none; font-size: 1.2em; font-weight: bold; color: #3BA0AF;"
+                //  style="margin-left: 2em; text-decoration: none; font-size:1.2em; font-weight: bold; color: #3BA0AF;"
                 className="align-self-center"
               >
                 Forgot Password ?
