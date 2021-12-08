@@ -10,6 +10,7 @@ dotenv.config();
 //import routes
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
+const categoryRoutes = require('./routes/category');
 
 
 //middleware 
@@ -22,6 +23,7 @@ app.use(expressValidator());
 //routes middleware
 app.use('/api', authRoutes)
 app.use('/api', userRoutes)
+app.use('/api', categoryRoutes)
 
 mongoose.connect(process.env.DATABASE)
     .then(() => {
