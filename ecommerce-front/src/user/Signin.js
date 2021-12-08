@@ -8,7 +8,7 @@ import background from "../images/background.svg";
 import buttomDecorations from "../images/buttom-decorations.svg";
 import figuerFlying from "../images/figuer_flying.svg";
 import figuerWaving from "../images/figuer_waving.svg";
-//fsdfdsf
+
 <link
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
   rel="stylesheet"
