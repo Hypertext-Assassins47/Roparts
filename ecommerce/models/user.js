@@ -73,4 +73,18 @@ const userSchema = new mongoose.Schema({
 //     }
 // };
 
+//this part is for the backend there is and modification to make the user object a unqiue. *Hamzeh
+const categorySchema = new mongoose.Schema(
+    {
+        name:{
+            type : String,
+            trim:true,
+            required : true,
+            maxlength:32,
+            unique:true
+        }
+    },
+    {timestamps : true}
+);
+
 module.exports = mongoose.model('User', userSchema);
