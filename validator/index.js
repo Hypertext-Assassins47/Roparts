@@ -8,6 +8,12 @@ exports.userSignupValidator = (req, res, next) => {
       min: 4,
       max: 32,
       //
+
+      //updated
+
+      //
+
+      //
     });
   req.check("password", "Password is required").notEmpty();
   req
