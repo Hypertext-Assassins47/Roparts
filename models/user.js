@@ -21,7 +21,10 @@ const userSchema = new mongoose.Schema(
       required: true,
     },
 
-    //change
+    about: {
+      type: String,
+      trim: true,
+    },
 
     role: {
       type: Number,
