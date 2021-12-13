@@ -5,15 +5,8 @@ exports.userSignupValidator = (req, res, next) => {
     .matches(/.+\@.+\..+/)
     .withMessage("Email must contain @")
     .isLength({
-      min: 4,
       max: 32,
-      //
-
-      //updated
-
-      //
-
-      //
+      min: 4,
     });
   req.check("password", "Password is required").notEmpty();
   req
