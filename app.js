@@ -30,6 +30,3 @@ mongoose.connect(process.env.DATABASE)
 
 const port = process.env.PORT || 8000; // this is the port
 
-app.listen(port, () => {
-    console.log(`I am listening on port ${port} `);
-})
