@@ -1,6 +1,7 @@
 const formidable = require('formidable');
 const _ = require('lodash');
 const fs = require('fs')
+const path = require('path')
 const Product = require('../models/product');
 const { errorHandler } = require('../helpers/dbErrorHandler');
 
@@ -12,7 +13,7 @@ exports.create = (req, res) => {
         if (err) {
             return res.status(400).json({
                 error: 'Image could not be uploaded'
-            })
+            });
         }
         let product = new Product(fields);
 
@@ -24,7 +25,7 @@ exports.create = (req, res) => {
             //     product.photo.data = data;
             //     product.photo.contentType = files.photo.type;
             // })
-        }
+        };
         product.save((err, result) => {
             if (err) {
                 return res.status(400).json({

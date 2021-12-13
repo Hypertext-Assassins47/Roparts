@@ -5,7 +5,7 @@ const morgan = require('morgan'); // request gula console e print kore dekhay. i
 const cookieParser = require('cookie-parser') // credentials store korar jnno 
 const expressValidator = require('express-validator')
 const app = express(); //declaring my app here 
-const dotenv = require('dotenv'); // as we need to use our port 
+const dotenv = require('dotenv'); // as we need to use our port and database 
 dotenv.config();
 //import routes
 const authRoutes = require('./routes/auth');
