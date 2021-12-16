@@ -4,7 +4,7 @@ import "./slide.css";
 import "react-slideshow-image/dist/styles.css";
 import "./styles.css";
 import asset1 from "../images/Asset1.svg";
-
+//
 <link
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
   rel="stylesheet"
