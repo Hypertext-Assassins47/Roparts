@@ -6,8 +6,8 @@ const Product = require('../models/product');
 const { errorHandler } = require('../helpers/dbErrorHandler');
 
 exports.create = (req, res) => {
-    let form = new formidable.IncomingForm()
-    form.keepExtensions = true
+    let form = new formidable.IncomingForm();
+    form.keepExtensions = true;
 
     form.parse(req, (err, fields, files) => {
         if (err) {
@@ -15,15 +15,17 @@ exports.create = (req, res) => {
                 error: 'Image could not be uploaded'
             });
         }
-        let product = new Product(fields);
+        const product = new Product(fields);
 
         if (files.image) {
+            console.log(files.image.type);
             product.image.data = fs.readFileSync(files.image.path);
+
             product.image.contentType = files.image.type;
-            // fs.readFile(files.photo.path, (err, data) => {
+            // fs.readFileSync(files.photo.path, (err, data) => {
             //     if (err) return res.status(400).send("Problem in the file data");
-            //     product.photo.data = data;
-            //     product.photo.contentType = files.photo.type;
+            //     product.image.data = data;
+            //     product.image.contentType = files.image.type;
             // })
         };
         product.save((err, result) => {
