@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { create, categoryById, read, update, remove, } = require("../controllers/category");
+const { create, categoryById, read, update, remove, list } = require("../controllers/category");
 const { requireSignin, isAuth, isAdmin } = require("../controllers/auth") // we need this authorization middlewares here so that only  admin can make any category
 const { userById } = require("../controllers/user") //anytime get id in the parameter than this middleware will run 
 
