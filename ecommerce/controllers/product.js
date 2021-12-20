@@ -15,12 +15,30 @@ exports.create = (req, res) => {
                 error: 'Image could not be uploaded'
             });
         }
+        // Validation for all fields
+        const { name, description, price, category, quantity, shipping } = fields;
+
+        if (!name ||
+            !description ||
+            !price ||
+            !category ||
+            !quantity ||
+            !shipping) {
+            return res.status(400).json({
+                error: "All fields are required."
+            })
+        }
+
         const product = new Product(fields);
 
         if (files.image) {
-            console.log(files.image.type);
+            //console.log("FILES IMAGE", files.image);
+            if (files.image.size > 1000000) {
+                return res.status(400).json({
+                    error: "Image should be less than 1mb!!"
+                })
+            }
             product.image.data = fs.readFileSync(files.image.path);
-
             product.image.contentType = files.image.type;
             // fs.readFileSync(files.photo.path, (err, data) => {
             //     if (err) return res.status(400).send("Problem in the file data");
@@ -39,4 +57,4 @@ exports.create = (req, res) => {
 
     });
 };
-// I have some confusion about this part >> file uploading
+
