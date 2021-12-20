@@ -44,10 +44,31 @@ exports.update = (req, res) => {
 
 }
 
-exports.update = (req, res) => {
+exports.remove = (req, res) => {
+    const category = req.category;
 
-}
+    category.remove((err, data) => {
+        if (err) {
+            return res.status(400).json({
+                error: errorHandler(err)
+            });
+        }
+        res.json({
+            message: 'Category Deleted!'
+        });
+    });
 
-exports.update = (req, res) => {
+};
+
+
+exports.list = (req, res) => {
+    Category.find().exec((err, data) => {
+        if (err) {
+            return res.status(400).json({
+                error: errorHandler(err)
+            });
+        }
+        res.json(data);
+    });
 
 }
