@@ -35,7 +35,7 @@ const Routes = () => {
         <Route path="/signup" exact component={Signup} />
         <Route path="/mostpopular" exact component={MostPopular} />
         <Route path="/newproduct" exact component={NewProduct} />
-
+        <Route path="/cart" exact component={Cart} />
         <Route path="/professional" exact component={Professional} />
         <Route path="/education" exact component={Education} />
 
@@ -45,7 +45,6 @@ const Routes = () => {
         <AdminRoute path="/create/product" exact component={AddProduct} />
 
         <Route path="/product/:productId" exact component={Product} />
-        <Route path="/cart" exact component={Cart} />
       </Switch>
     </BrowserRouter>
   );

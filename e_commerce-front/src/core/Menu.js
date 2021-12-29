@@ -78,6 +78,33 @@ const Menu = ({ history }) => (
             Eduation
           </a>
         </li>
+        <li className="nav-item">
+          <Link
+            className="nav-link"
+            // style={isActive(history, "/cart")}
+            style={{ marginLeft: "1300px" }}
+            to="/cart"
+          >
+            Cart
+            <sup>
+              <small
+                className="cart-badge"
+                style={{
+                  background: "black",
+                  borderRadius: "80%",
+                  padding: "5px",
+                  fontSize: "12px",
+                  fontStyle: "italic",
+                  color: "white",
+                  fontWeight: "bold",
+                  margin: "2px",
+                }}
+              >
+                {itemTotal()}
+              </small>
+            </sup>
+          </Link>
+        </li>
         {/* <li className="nav-item navber-default" style={{ marginLeft: "600px" }}>
           <Search className="search-bar" />
         </li>
@@ -126,7 +153,7 @@ const Menu = ({ history }) => (
           </li>
         )}
         {isAuthenticated() && isAuthenticated().user.role === 1 && (
-          <li className="nav-item" style={{ marginLeft: "1350px" }}>
+          <li className="nav-item">
             <Link
               className="nav-link"
               style={isActive(history, "/admin/dashboard")}
@@ -138,40 +165,13 @@ const Menu = ({ history }) => (
         )}
         {!isAuthenticated() && (
           <Fragment>
-            <li className="nav-item" style={{ marginLeft: "1300px" }}>
+            <li className="nav-item">
               <Link
                 className="nav-link"
                 style={isActive(history, "/signin")}
                 to="/signin"
               >
                 Sign In
-              </Link>
-            </li>
-
-            <li className="nav-item">
-              <Link
-                className="nav-link"
-                style={isActive(history, "/cart")}
-                to="/cart"
-              >
-                Cart
-                <sup>
-                  <small
-                    className="cart-badge"
-                    style={{
-                      background: "black",
-                      borderRadius: "80%",
-                      padding: "5px",
-                      fontSize: "12px",
-                      fontStyle: "italic",
-                      color: "white",
-                      fontWeight: "bold",
-                      margin: "2px",
-                    }}
-                  >
-                    {itemTotal()}
-                  </small>
-                </sup>
               </Link>
             </li>
 

@@ -15,11 +15,12 @@ const Cart = () => {
 
   const showItems = (items) => {
     return (
-      <div>
+      <div style={{ marginLeft: "20px" }}>
         <h2>Your cart has {`${items.length}`} items</h2>
-        <hr />
+        <hr style={{ marginLeft: "-20px" }} />
         {items.map((product, i) => (
           <Card
+            showDescription={false}
             key={i}
             product={product}
             showAddToCartButton={false}
@@ -40,6 +41,28 @@ const Cart = () => {
   );
 
   return (
+    <Layout title="" description="" className="">
+      <div className="card">
+        <div className="row">
+          <div className="col-8">
+            {items.length > 0 ? showItems(items) : noItemsMessage()}
+          </div>
+
+          <div className="col-4">
+            <h2 className="mb-2">Your cart summary</h2>
+            <hr />
+            <Checkout products={items} />
+          </div>
+        </div>
+      </div>
+    </Layout>
+  );
+};
+
+export default Cart;
+
+{
+  /*  return (
     <Layout
       title="Shopping Cart"
       description="Manage your cart items. Add remove checkout or continue shopping."
@@ -59,5 +82,5 @@ const Cart = () => {
     </Layout>
   );
 };
-
-export default Cart;
+*/
+}

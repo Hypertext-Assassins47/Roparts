@@ -6,10 +6,12 @@ import { addItem, updateItem, removeItem } from "./cartHelpers";
 
 const Card = ({
   product,
+  showDescription = true,
   showViewProductButton = true,
   showAddToCartButton = true,
   cartUpdate = false,
   showRemoveProductButton = false,
+
   setRun = (f) => f, //default value of function
   run = undefined, // default value of undefined
 }) => {
@@ -25,6 +27,15 @@ const Card = ({
             View Product
           </button>
         </Link>
+      )
+    );
+  };
+
+  //Description only shows in product page
+  const showDescriptionText = (showDescription) => {
+    return (
+      showDescription && (
+        <p class="rounded text-justify para mb-0"> {product.description} </p>
       )
     );
   };
@@ -46,7 +57,8 @@ const Card = ({
   // Note that the "Add to cart" button only renders if showAddToCartButton is true
   const showAddToCart = (showAddToCartButton) => {
     return (
-      showAddToCartButton && (
+      showAddToCartButton &&
+      product.quantity > 0 && (
         <button onClick={addToCart} className="btn btn-outline-warning mt-2">
           Add to cart
         </button>
@@ -114,7 +126,7 @@ const Card = ({
   };
   return (
     <div class=" container mt-5 mb-6">
-      <div class=" d-flex justify-content-center row mb-4">
+      <div class=" d-flex justify-content-center row mb-4 ">
         <div class="shadow-sm col-10 md-9">
           <div class="row p-2 bg-white border rounded">
             <div class="col-md-3 mt-4">
@@ -131,9 +143,9 @@ const Card = ({
               </p>
               {shouldRedirect(redirect)}
               <div class="d-flex flex-row"></div>
-
-              <p class="text-justify para mb-0"></p>
-              {product.description}
+              {showDescriptionText(showDescription)}
+              {/*    <p class="text-justify para mb-0"></p>
+              {product.description}*/}
               <p
                 className="black-8 mt-4"
                 style={{ background: "#e6e6e6", width: "60%" }}
@@ -147,6 +159,7 @@ const Card = ({
                 Added on:{moment(product.createdAt).fromNow()}
               </p>
               {showStock(product.quantity)}
+
               <br></br>
             </div>
             <div class="align-items-center align-content-center col-md-3 border-left mt-1">
