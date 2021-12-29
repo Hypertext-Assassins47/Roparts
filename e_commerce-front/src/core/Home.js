@@ -4,6 +4,9 @@ import "./slide.css";
 import "react-slideshow-image/dist/styles.css";
 import "./styles.css";
 import asset1 from "../images/Asset1.svg";
+import asset2 from "../images/Asset2.svg";
+import asset3 from "../images/Asset3.svg";
+
 import Search from "./Search";
 <link
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -47,7 +50,7 @@ const Home = () => (
                   now on sale
                 </p>
                 <a
-                  href="/#"
+                  href="/shop"
                   class="btn btn-default"
                   style={{ width: "auto", fontSize: "1em", lineHeight: "1.6" }}
                 >
@@ -67,13 +70,13 @@ const Home = () => (
                   <img src={asset1} class="d-block w-100" alt="..." />
                 </div>
                 <div class="carousel-item">
-                  <img src={asset1} class="d-block w-100" alt="..." />
+                  <img src={asset2} class="d-block w-100" alt="..." />
                 </div>
                 <div class="carousel-item">
-                  <img src={asset1} class="d-block w-100" alt="..." />
+                  <img src={asset3} class="d-block w-100" alt="..." />
                 </div>
                 <div class="carousel-item">
-                  <img src={asset1} class="d-block w-100" alt="..." />
+                  <img src={asset2} class="d-block w-100" alt="..." />
                 </div>
               </div>
 

@@ -24,7 +24,8 @@ const Checkout = ({ products }) => {
 
   return (
     <div>
-      <h2>Total: RM{getTotal()}</h2>
+      <h2>Total: RM{parseFloat(getTotal()).toFixed(2)}</h2>
+
       <Link to="/shop">
         <button className="btn btn-secondary m-2">Continue Shopping</button>
       </Link>

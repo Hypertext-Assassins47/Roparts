@@ -73,9 +73,13 @@ const Card = ({
 
   const showStock = (quantity) => {
     return quantity > 0 ? (
-      <span className="badge badge-primary pill">In Stock</span>
+      <span className="btn btn-success mt-2 mb-2" style={{ cursor: "default" }}>
+        In Stock
+      </span>
     ) : (
-      <span className="badge badge-primary badge-pill">Out of Stock</span>
+      <span className="btn btn-danger mt-2 mb-2" style={{ cursor: "default" }}>
+        Out of Stock
+      </span>
     );
   };
 
@@ -130,10 +134,16 @@ const Card = ({
 
               <p class="text-justify para mb-0"></p>
               {product.description}
-              <p className="black-8 mt-4" style={{ background: "#e6e6e6" }}>
+              <p
+                className="black-8 mt-4"
+                style={{ background: "#e6e6e6", width: "60%" }}
+              >
                 Category: {product.category && product.category.name}
               </p>
-              <p className="black-8" style={{ background: "#e6e6e6" }}>
+              <p
+                className="black-8"
+                style={{ background: "#e6e6e6", width: "50%" }}
+              >
                 Added on:{moment(product.createdAt).fromNow()}
               </p>
               {showStock(product.quantity)}
@@ -144,7 +154,9 @@ const Card = ({
                 className="d-flex justify-content-end flex-row px-4 mt-6"
                 //  style={{ marginLeft: "120px" }}
               >
-                <h4 class="black-9 ml-1">RM {product.price}</h4>
+                <h4 class="black-9 ml-1">
+                  RM {parseFloat(product.price).toFixed(2)}
+                </h4>
               </div>
 
               <div class=" d-flex flex-column m-2 float-end">
