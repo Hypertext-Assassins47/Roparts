@@ -3,6 +3,7 @@ const mongoose = require('mongoose'); // to use our database
 const morgan = require('morgan'); // request gula console e print kore dekhay. its a good thing to make sure which request is working properly
 
 const cookieParser = require('cookie-parser') // credentials store korar jnno 
+const cors = require('cors'); //cross platform  
 const expressValidator = require('express-validator')
 const app = express(); //declaring my app here 
 const dotenv = require('dotenv'); // as we need to use our port and database 
@@ -19,6 +20,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(cookieParser());
 app.use(expressValidator());
+app.use(cors());
 
 
 //routes middleware

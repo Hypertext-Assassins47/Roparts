@@ -11,3 +11,23 @@ exports.userById = (req, res, next, id) => {
         next();
     })
 }
+
+exports.read = (req, res) => {
+    req.profile.password = undefined;
+
+    return res.json(req.profile);
+};
+
+exports.update = (req, res) => {
+    User.findOneAndUpdate(
+        { _id: req.profile._id },
+        { $set: req.body },
+        { new: true }, (err, user) => {
+            if (err) {
+                return res.status(400).json({ error: "You are not authorized" });
+            }
+            user.password = undefined;
+            res.json(user);
+        }
+    )
+}
