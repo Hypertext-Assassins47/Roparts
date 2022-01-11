@@ -1,12 +1,11 @@
-.container {
+/* .container {
   margin-left: 0px;
   width: 1800px;
-}
+  max-width: 100%;
+  margin-top: 5px;
+  border-radius: 10px;
+} */
 
-.container-fluid {
-  /* margin-left: 140px;  */
-  margin-right: 20px;
-}
 .nav-link {
   font-weight: bold;
 
@@ -26,24 +25,7 @@
   background-color: rgb(71, 70, 70);
   opacity: 0.8;
 }
-.cart {
-  border-radius: 25%;
-  background-color: #ffffff;
-}
 
-.bi-cart2 {
-  color: green;
-}
-
-.container {
-  /* margin-right: auto; */
-  max-width: 100%;
-  margin-top: 5px;
-}
-.leftSide > h3,
-p {
-  color: white;
-}
 .btn-default {
   font-family: Roboto;
   font-size: 1.5em;
@@ -56,19 +38,7 @@ p {
   border-radius: 30px;
   background: #f9f9f9;
 }
-.textfields label {
-  font-size: 1.4em;
-}
-.textfields span {
-  color: red;
-}
-.signUp {
-  color: #f9f9f9;
-  line-height: 15px;
-  border: 2px solid #5cc795;
-  border-radius: 30px;
-  background: #5cc795;
-}
+
 .form-control {
   background-color: white;
   border-radius: 1rem;
