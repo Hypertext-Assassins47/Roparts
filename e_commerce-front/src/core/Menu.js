@@ -212,7 +212,12 @@ const Menu = ({ history }) => (
         <img
           src={logo}
           alt="logo"
-          style={{ width: "150px", marginRight: "600px", marginLeft: "1px" }}
+          style={{
+            width: "150px",
+            marginRight: "600px",
+            marginLeft: "1px",
+            cursor: "pointer",
+          }}
           // style="width: 320px; margin-right: 1em; "
         />
 

@@ -2,6 +2,11 @@ import React from "react";
 import Layout from "../core/Layout";
 import { isAuthenticated } from "../auth";
 import { Link } from "react-router-dom";
+import { ProSidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
+import "react-pro-sidebar/dist/css/styles.css";
+import { FaGem } from "react-icons/fa";
+
+import { FaHeart } from "react-icons/fa";
 
 const AdminDashboard = () => {
   const {
@@ -45,6 +50,31 @@ const AdminDashboard = () => {
               }}
             >
               Create Product
+            </Link>
+          </li>
+          <li className="list-group-item bg-info btn-outline-primary btn-block">
+            <Link
+              className="nav-link"
+              to="/admin/products"
+              style={{
+                color: "white",
+                fontWeight: "bold",
+              }}
+            >
+              Manage Products
+            </Link>
+          </li>
+
+          <li className="list-group-item bg-info btn-outline-primary btn-block">
+            <Link
+              className="nav-link"
+              to="/admin/orders"
+              style={{
+                color: "white",
+                fontWeight: "bold",
+              }}
+            >
+              View Orders
             </Link>
           </li>
         </ul>
@@ -101,14 +131,35 @@ const AdminDashboard = () => {
   };
 
   return (
-    <Layout
-      title="Dashboard"
-      description={`G'day ${name}!`}
-      className="container-fluid"
-    >
-      <div className="row">
-        <div className="col-3">{adminLinks()}</div>
-        <div className="col-9">{adminInfo()}</div>
+    <Layout title="Dashboard" description={`G'day ${name}!`} className="">
+      <div class="m-2">
+        <div>
+          <ProSidebar style={{ position: "absolute", height: "auto" }}>
+            <Menu iconShape="round">
+              <SubMenu title="Admin Info" icon={<FaHeart />}>
+                <MenuItem>Name: {name} </MenuItem>
+                <MenuItem>Email: {email} </MenuItem>
+                <MenuItem>
+                  Role: {role === 1 ? "Admin" : "Registered User"}{" "}
+                </MenuItem>
+              </SubMenu>
+              <MenuItem icon={<FaGem />}>
+                Create Category
+                <Link to="/create/category" />
+              </MenuItem>
+              <MenuItem icon={<FaGem />}>
+                Create Product <Link to="/create/product" />
+              </MenuItem>
+              <MenuItem icon={<FaGem />}>
+                manage Products
+                <Link to="/admin/products" />
+              </MenuItem>
+              <MenuItem icon={<FaGem />}>
+                View Orders <Link to="/admin/orders" />
+              </MenuItem>
+            </Menu>
+          </ProSidebar>
+        </div>
       </div>
     </Layout>
   );

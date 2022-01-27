@@ -12,6 +12,9 @@ const Cart = () => {
   useEffect(() => {
     setItems(getCart());
   }, [run]);
+  
+
+
 
   const showItems = (items) => {
     return (
@@ -60,27 +63,3 @@ const Cart = () => {
 };
 
 export default Cart;
-
-{
-  /*  return (
-    <Layout
-      title="Shopping Cart"
-      description="Manage your cart items. Add remove checkout or continue shopping."
-      className="container-fluid"
-    >
-      <div className="row">
-        <div className="col-8">
-          {items.length > 0 ? showItems(items) : noItemsMessage()}
-        </div>
-
-        <div className="col-4">
-          <h2 className="mb-2">Your cart summary</h2>
-          <hr />
-          <Checkout products={items} />
-        </div>
-      </div>
-    </Layout>
-  );
-};
-*/
-}

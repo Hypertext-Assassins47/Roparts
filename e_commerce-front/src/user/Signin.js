@@ -2,20 +2,22 @@ import React, { useState } from "react";
 import "./index.css";
 import Layout from "../core/Layout";
 import { Redirect } from "react-router-dom";
-import { signin, authenticate } from "../auth";
+import { signin, authenticate, isAuthenticated } from "../auth";
+
 import buttomDecorations from "../images/buttom-decorations.svg";
 import figuerWaving from "../images/figuer_waving.svg";
 
 const Signin = () => {
   const [values, setValues] = useState({
-    email: "dj@gmail.com",
-    password: "llllll9",
+    email: "",
+    password: "",
     error: "",
     loading: false,
     redirectToReferrer: false,
   });
 
   const { email, password, loading, error, redirectToReferrer } = values;
+  const { user } = isAuthenticated();
 
   const handleChange = (name) => (event) => {
     setValues({ ...values, error: false, [name]: event.target.value });
@@ -119,7 +121,7 @@ const Signin = () => {
             ></p>
 
             <div className="mb-3">
-              <label for="exampleFormControlInput1" className="form-label">
+              <label className="form-label">
                 Email Address<span>*</span>
               </label>
               <input
@@ -127,22 +129,19 @@ const Signin = () => {
                 type="email"
                 className="form-control"
                 value={email}
-                required
-                size="50"
               />
             </div>
 
             <div className="mb-3">
-              <label for="exampleFormControlInput1" className="form-label">
+              <label className="form-label">
                 Password<span>*</span>
               </label>
               <input
+                onChange={handleChange("password")}
                 type="password"
                 className="form-control"
-                id="exampleFormControlInput1"
+                value={password}
                 placeholder="Enter Your Password"
-                required
-                size="50"
               />
             </div>
 
@@ -181,6 +180,7 @@ const Signin = () => {
     </div>
   );
 
+  //error handler for wrong pasword
   const showError = () => (
     <div
       className="alert alert-danger"
@@ -199,6 +199,13 @@ const Signin = () => {
 
   const redirectUser = () => {
     if (redirectToReferrer) {
+      if (user && user.role === 1) {
+        return <Redirect to="/admin/dashboard" />;
+      } else {
+        return <Redirect to="/user/dashboard" />;
+      }
+    }
+    if (isAuthenticated()) {
       return <Redirect to="/" />;
     }
   };

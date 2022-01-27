@@ -3,6 +3,7 @@ import Layout from "./Layout";
 import { getProducts } from "./apiCore";
 import Card from "./Card";
 import newProduct from "../images/newProduct.jpg";
+import YoutubeEmbed from "./YoutubeEmbed";
 
 const NewProduct = () => {
   const [productsBySell, setProductsBySell] = useState([]);
@@ -37,9 +38,14 @@ const NewProduct = () => {
   return (
     <Layout title="" description="" className="container-fluid">
       <div class="">
+        <YoutubeEmbed embedId="https://www.youtube.com/embed/Q1mZ4ADUEZs?rel=0&start=47&autoplay=1&mute=1&loop=true" />
+        {/*  
+
         <img src={newProduct} class="rounded mx-auto d-block" alt="..." />
+        */}
       </div>
       <h2 className="text-center mb-10">New Arrivals</h2>
+
       <div className="row">
         {productsByArrival.map((product, i) => (
           <Card key={i} product={product} />

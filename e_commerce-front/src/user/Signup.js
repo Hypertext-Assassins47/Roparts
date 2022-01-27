@@ -11,11 +11,12 @@ const Signup = () => {
     name: "",
     email: "",
     password: "",
+    address: "",
     error: "",
     success: false,
   });
 
-  const { name, email, password, success, error } = values;
+  const { name, email, password, address, success, error } = values;
 
   const handleChange = (name) => (event) => {
     setValues({ ...values, error: false, [name]: event.target.value });
@@ -24,7 +25,7 @@ const Signup = () => {
   const clickSubmit = (event) => {
     event.preventDefault();
     setValues({ ...values, error: false });
-    signup({ name, email, password }).then((data) => {
+    signup({ name, email, password, address }).then((data) => {
       if (data && data.error) {
         setValues({ ...values, error: data.error, success: false });
       } else {
@@ -33,6 +34,7 @@ const Signup = () => {
           name: "",
           email: "",
           password: "",
+          address: "",
           error: "",
           success: true,
         });
@@ -167,6 +169,7 @@ const Signup = () => {
                     required
                   />
                 </div>
+
                 <label for="exampleFormControlInput1" class="form-label">
                   Password<span>*</span>
                 </label>

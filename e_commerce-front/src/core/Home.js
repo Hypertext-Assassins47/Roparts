@@ -7,7 +7,18 @@ import asset1 from "../images/Asset1.svg";
 import asset2 from "../images/Asset2.svg";
 import asset3 from "../images/Asset3.svg";
 
-import Search from "./Search";
+
+
+//tidio chat
+
+(function () {
+  var s = document.createElement("script");
+  s.type = "text/javascript";
+  s.src = "https://code.tidio.co/5zf1bwh2xgiwm6xfwv1ro6xzbgvzexyi.js";
+  s.async = true;
+  document.body.append(s);
+})();
+
 <link
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
   rel="stylesheet"
@@ -107,6 +118,13 @@ const Home = () => (
                   data-bs-slide-to="3"
                   aria-label="Slide 4"
                 ></button>
+                <div>
+                  <script
+                    src=" https://code.tidio.co/5zf1bwh2xgiwm6xfwv1ro6xzbgvzexyi.js"
+                    async
+                  ></script>
+                  
+                </div>
               </div>
             </div>
           </div>

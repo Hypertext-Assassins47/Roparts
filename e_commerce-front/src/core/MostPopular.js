@@ -3,6 +3,7 @@ import Layout from "./Layout";
 import { getProducts } from "./apiCore";
 import Card from "./Card";
 import popularImage from "../images/popularImage.jpg";
+import YoutubeEmbed from "./YoutubeEmbed";
 
 const MostPopular = () => {
   const [productsBySell, setProductsBySell] = useState([]);
@@ -37,9 +38,13 @@ const MostPopular = () => {
   return (
     <Layout title="" description="" className="container-fluid">
       <div class="">
-        <img src={popularImage} class="rounded mx-auto d-block" alt="..." />
+        <YoutubeEmbed embedId="https://www.youtube.com/embed/Oa9aWdcCC4o?rel=0&start=33&autoplay=1&mute=1&loop=true" />
+        {/*  <img src={popularImage} class="rounded mx-auto d-block" alt="..." />
+         */}
       </div>
+      {/* 
       <h2 className="text-center mb-10">Most Popular</h2>
+      */}
       <div className="row">
         {productsBySell.map((product, i) => (
           <Card key={i} product={product} />
