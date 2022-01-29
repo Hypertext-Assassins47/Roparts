@@ -1,0 +1,59 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+#nav-dropdown {
+  color: white;
+  font-weight: bold;
+}
+
+.mainNav ul li a,
+nav-item span {
+  position: relative;
+}
+.mainNav ul li a:after,
+nav-item span:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: ".";
+  color: transparent;
+  background: rgba(110, 94, 200, 0.527);
+  height: 1px;
+}
+.mainNav ul li a:hover:after,
+nav-item span:hover:after {
+  width: 50%;
+}
+
+.carousel {
+  margin-top: 20px;
+  margin-left: 300px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  max-width: 1250px;
+  height: 730px;
+}
+
+.search-bar {
+  margin-left: 950px;
+  padding-left: 10px;
+  width: 300px !important;
+
+  font-size: 0.5em;
+  background-color: white;
+  border-radius: 1rem;
+  border: 1px solid rgb(25, 240, 157);
+  height: 3em;
+  font-size: 0.8em;
+}
+.navber-default {
+  background-color: #5cc795;
+}
+.first-level {
+  margin-bottom: 1px;
+}
